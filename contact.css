@@ -1,0 +1,517 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+  height: 100%;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    text-decoration: none;
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x:hidden; /* Prevent horizontal scrolling */
+ 
+}
+
+
+
+/* Navigation */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f5f7fa;
+  border-bottom: 2px solid #e2e8f0;
+  position: fixed;
+  width: 100%;
+  top:0;
+  z-index: 1000;
+}
+
+.logo{
+  flex: 1;
+}
+
+.logo img {
+  width: 120px; /* Logo size */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex:2;
+  align-items: center;
+}
+
+.nav-links li {
+  font-size: 16px;
+}
+
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 15px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+ 
+}
+
+
+.nav-links a:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+.toggle{
+  list-style-type: none;
+  display: none;
+  flex:-1;
+  right: 35px;
+  /* margin-top: 10px; */
+  
+}
+
+/* nav li:first-child{
+  margin-right: auto;
+} */
+.sidebar li{
+  list-style: none;
+ padding-left: 30px;
+ margin-top: 25px;
+}
+
+.sidebar{
+  position: fixed;
+  top:0;
+  right:0;
+  height: 100vh;
+  width:250px;
+  z-index:999;
+  background-color:rgba(255, 255, 255, 0.486);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter:blur(15px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1) ;
+  display:none;
+ 
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  
+}
+.sidebar li{
+  width:100%;
+ 
+}
+.sidebar a{
+  width:100%;
+
+}
+
+@media(max-width:800px){
+  .hideOnMobile a{
+      display:none;
+      
+    
+
+  }
+  .toggle{
+      display: block;
+  }
+
+  
+}
+
+
+@media(max-width:480px){
+  .sidebar{
+      width:70%;
+    
+  }
+  .toggle{
+      display: flex;
+      text-decoration: dashed;
+  }
+
+  .feature-item {
+    flex-basis: 100%;
+  }
+}
+
+
+
+@media(max-width:800px){
+  .hideOnMobile{
+      display:none;
+  }
+  .toggle{
+      display: block;
+  }
+}
+
+
+
+/* Main container for contact and pricing sections */
+main {
+    display: flex;
+    flex-grow: 1;
+    flex: 1; /* Pushes the footer to the bottom */
+    flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
+    justify-content: space-around; /* Ensure spacing between the sections */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Contact Section */
+.contact-section {
+    flex: 1 1 45%; /* Allow for flexibility but keep it 45% width */
+    max-width: 600px; /* Optional max width */
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 60px;
+}
+
+/* Header Styling for Contact and Pricing */
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Contact Form Styles */
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.contact-form .radio-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.contact-form .submit-button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.submit-button{
+  margin-left:auto;
+width: 100%; }
+
+.contact-form .submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Pricing Section Styles */
+.pricing-section {
+  flex: 1 1 calc(50% - 30px); /* Flexible width for side-by-side with Contact Section */
+  max-width:600px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  height:65%;
+  margin-top: 15%;
+}
+
+.pricing-cards {
+  display: flex; /* Use Flexbox for alignment */
+  flex-wrap: wrap; /* Enable wrapping */
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Center-align cards */
+  align-items: stretch; /* Ensure cards have equal height */}
+
+.pricing-card {
+  flex: 1 1 calc(30% - 20px); /* Each card takes ~30% width, adjusted for gap */
+  min-width: 250px; /* Ensure cards don't get too small */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex; /* Flexbox to center content vertically */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Distribute content evenly */
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-card h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #007BFF;
+}
+
+.pricing-card p.price {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.pricing-card ul li {
+  margin-bottom: 5px;
+}
+
+
+/* Responsive Design */
+@media (min-width: 950px) and (max-width: 1300px){
+  /* Adjust the Contact and Pricing sections for medium screens */
+  .contact-section {
+   
+      margin-top: 65px;
+    
+  }
+
+  .pricing-section {
+      margin-left: 50px; 
+
+     
+  }
+  
+  .pricing-cards {
+      flex-direction: column; /* Stack cards vertically on smaller screens */
+  }
+
+  .pricing-card {
+      flex: 1 1 100%; /* Each card takes full width */
+      margin-bottom: 15px; /* Add space between cards */
+  }
+}
+
+@media (min-width: 601px) and (max-width: 950px) {
+  /* Adjust the Contact and Pricing sections for smaller screens */
+  .contact-section {
+      /* Reduce padding for smaller screens */
+      margin-top: 75px;
+    
+  }
+  .pricing-section{
+    margin-left: 40px;
+  }
+  
+
+  h2 {
+      font-size: 20px; /* Adjust heading size */
+  }
+
+  .pricing-cards {
+      gap: 15px; /* Reduce space between pricing cards */
+  }
+
+  .pricing-card {
+      flex: 1 1 100%; /* Cards will take full width on small screens */
+      padding: 15px; /* Adjust card padding */
+  }
+
+  .contact-form .form-group {
+      margin-bottom: 12px; /* Reduce spacing in form groups */
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select {
+      padding: 8px; /* Reduce padding for smaller screens */
+  }
+
+  .contact-form .submit-button {
+      padding: 8px 16px; /* Reduce button padding */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for very small screens */
+  .contact-section,.pricing-section {
+      padding: 10px; /* Reduce padding even more */
+      margin-right: 25px;
+  }
+  
+  
+      h2 {
+      font-size: 18px; /* Adjust heading size */
+  }
+
+  .pricing-card h3 {
+      font-size: 18px; /* Adjust card heading size */
+  }
+
+  .pricing-card p.price {
+      font-size: 20px; /* Adjust price text size */
+  }
+}
+
+/* Footer */
+footer {
+  background-color: #333; /* Example background color */
+  color: white; /* Example text color */
+  text-align: center;
+  padding-bottom: 10px; /* Reduced padding */
+  height: auto; /* Adjust height based on content */
+  position: relative; /* Ensures footer stays at the bottom */
+  bottom: 0; /* Aligns the footer at the very bottom of the viewport */
+  width: 100%; /* Full-width footer */
+  margin-top: auto;
+}
+
+/* Footer Container */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 3000px;
+  margin: 0 auto;
+  padding: 10px; /* Reduced padding */
+  min-height: auto;
+}
+
+/* Footer Sections */
+
+/* Footer */
+footer {
+  background-color: #333; /* Example background color */
+  color: white; /* Example text color */
+  text-align: center;
+  padding: 10px; /* Reduced padding */
+  height:auto; /* Adjust height based on content */
+  position: relative; /* Ensures footer stays at the bottom */
+  bottom: 0;
+  left: 0;
+  right: 0; 
+  width: 100%; /* Full-width footer */
+  flex-shrink: 0; /* Prevents footer from shrinking */
+}
+
+/* Footer Container */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 3000px;
+  margin: 0 auto;
+  padding: 10px; /* Reduced padding */
+  min-height: auto;
+}
+
+/* Footer Sections */
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  margin: 5px; /* Reduced margin */
+  text-align: center;
+}
+
+.footer-section h3 {
+  font-size: 1.2em; /* Reduced font size */
+  margin-bottom: 10px; /* Reduced bottom margin */
+  color: #e8c547;
+}
+
+/* Footer Links */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin: 3px 0; /* Reduced margin */
+}
+
+.footer-links ul li a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-size: 0.9em; /* Reduced font size */
+}
+
+.footer-links ul li a:hover {
+  text-decoration: none;
+  color: #e8c547;
+}
+
+/* Footer Timings */
+.footer-timings p {
+  margin: 5px 0; /* Reduced margin */
+  font-size: 0.9em; /* Reduced font size */
+}
+
+/* Footer Branding */
+.footer-branding p {
+  font-size: 0.9em; /* Reduced font size */
+  line-height: 1.4; /* Adjusted line height */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  padding: 5px;
+  border-top: 1px solid #444;
+  margin-top: 0px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.8em; /* Reduced font size */
+  color: #aaa;
+}
+
+/* Responsive Design */
+@media (max-width:1024px){
+ 
+}
+@media (max-width: 768px) {
+  
+
+ 
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    margin-bottom: 15px; /* Reduced margin bottom */
+  }
+}
