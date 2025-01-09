@@ -10,6 +10,8 @@ body {
     background-color: #f4f7f9;
     color: #333;
     line-height: 1.6;
+    overflow-x:hidden; /* Prevent horizontal scrolling */
+ 
 }
 
 

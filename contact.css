@@ -4,9 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-html{
-  height: 100%;
-}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f0f4f8;
@@ -19,6 +17,7 @@ body {
     overflow-x:hidden; /* Prevent horizontal scrolling */
  
 }
+
 
 
 
@@ -310,6 +309,7 @@ width: 100%; }
 
   .pricing-section {
       margin-left: 50px; 
+      height:85%;
 
      
   }
@@ -333,6 +333,7 @@ width: 100%; }
   }
   .pricing-section{
     margin-left: 40px;
+    height:80%;
   }
   
 
@@ -384,19 +385,24 @@ width: 100%; }
       font-size: 20px; /* Adjust price text size */
   }
 }
-
-/* Footer */
-footer {
-  background-color: #333; /* Example background color */
-  color: white; /* Example text color */
-  text-align: center;
-  padding-bottom: 10px; /* Reduced padding */
-  height: auto; /* Adjust height based on content */
-  position: relative; /* Ensures footer stays at the bottom */
-  bottom: 0; /* Aligns the footer at the very bottom of the viewport */
-  width: 100%; /* Full-width footer */
-  margin-top: auto;
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+html, body {
+  height: 100%; /* Make the page take up the full height */
+}
+
+
+
+/* Main content should take up the remaining space */
+.main-content {
+  flex: 1; /* Pushes the footer to the bottom if content is short */
+}
+
 
 /* Footer Container */
 .footer-container {
@@ -418,7 +424,7 @@ footer {
   text-align: center;
   padding: 10px; /* Reduced padding */
   height:auto; /* Adjust height based on content */
-  position: relative; /* Ensures footer stays at the bottom */
+  position:relative; /* Ensures footer stays at the bottom */
   bottom: 0;
   left: 0;
   right: 0; 
